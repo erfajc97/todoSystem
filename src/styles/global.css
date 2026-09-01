@@ -1,0 +1,96 @@
+@import "tailwindcss";
+@import "@heroui/styles";
+
+@theme {
+  --color-bg: oklch(0.995 0.002 90);
+  --color-surface: oklch(0.995 0.002 90);
+  --color-surface-raised: oklch(0.96 0.005 90);
+  --color-brand: oklch(0.18 0.01 80);
+  --color-brand-500: oklch(0.18 0.01 80);
+  --color-brand-hover: oklch(0.28 0.012 80);
+  --color-on-brand: oklch(0.99 0.004 90);
+  --color-text: oklch(0.18 0.01 80);
+  --color-text-muted: oklch(0.52 0.012 80);
+  --color-text-subtle: oklch(0.68 0.01 80);
+  --color-border: oklch(0.9 0.006 90);
+  --color-border-strong: oklch(0.18 0.01 80);
+  --color-verified: oklch(0.62 0.16 250);
+  --color-success: oklch(0.68 0.16 155);
+  --color-success-soft: oklch(0.94 0.04 155);
+  --color-rating: oklch(0.82 0.16 85);
+  --color-danger: oklch(0.58 0.2 25);
+  --color-chat-out: oklch(0.62 0.16 250);
+  --color-overlay: oklch(0.18 0.01 80 / 0.45);
+
+  --font-heading: "Manrope", sans-serif;
+  --font-body: "Source Sans 3", sans-serif;
+
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-xl: 20px;
+  --radius-card: 16px;
+  --radius-pill: 999px;
+}
+
+:root,
+.light,
+[data-theme="light"] {
+  --accent: var(--color-brand-500);
+  --accent-foreground: var(--color-on-brand);
+  --background: var(--color-bg);
+  --surface: var(--color-surface);
+  --field-background: var(--color-surface-raised);
+  --field-foreground: var(--color-text);
+  --field-placeholder: var(--color-text-subtle);
+  --muted: var(--color-text-muted);
+  --success: var(--color-success);
+  --warning: var(--color-rating);
+  --danger: var(--color-danger);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-body);
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  margin: 0;
+  min-height: 100dvh;
+  background-color: var(--color-bg);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  text-transform: none;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+.hide-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}

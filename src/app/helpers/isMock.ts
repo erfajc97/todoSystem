@@ -1,0 +1,5 @@
+const USE_MOCK = import.meta.env.VITE_USE_MOCK !== 'false';
+
+export function isMock(): boolean {
+  return USE_MOCK;
+}

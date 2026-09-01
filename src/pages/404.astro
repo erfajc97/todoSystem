@@ -1,0 +1,13 @@
+---
+import PublicLayout from '@/layouts/PublicLayout.astro';
+import { t } from '@/app/i18n';
+---
+
+<PublicLayout title={t('meta.notFound')} description={t('notFound.title')}>
+  <div class="flex min-h-[60dvh] flex-col items-center justify-center gap-4 px-6 text-center">
+    <h1 class="font-heading text-2xl font-extrabold">{t('notFound.title')}</h1>
+    <a href="/" class="rounded-full bg-brand px-6 py-3 text-sm font-semibold text-on-brand">
+      {t('notFound.cta')}
+    </a>
+  </div>
+</PublicLayout>

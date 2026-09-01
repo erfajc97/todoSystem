@@ -1,0 +1,10 @@
+---
+import PublicLayout from '@/layouts/PublicLayout.astro';
+import Categories from '@/app/features/catalog/Categories';
+import { t } from '@/app/i18n';
+import { CATEGORIES } from '@/app/mock/catalog';
+---
+
+<PublicLayout title={t('meta.categories')} description={t('meta.defaultDescription')}>
+  <Categories categories={CATEGORIES} client:load />
+</PublicLayout>

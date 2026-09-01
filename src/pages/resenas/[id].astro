@@ -1,0 +1,17 @@
+---
+import PublicLayout from '@/layouts/PublicLayout.astro';
+import Reviews from '@/app/features/reviews/Reviews';
+import { BUSINESSES, SERVICES } from '@/app/mock/catalog';
+import { t } from '@/app/i18n';
+
+export function getStaticPaths() {
+  const ids = [...BUSINESSES.map((b) => b.id), ...SERVICES.map((s) => s.id)];
+  return ids.map((id) => ({ params: { id } }));
+}
+
+const { id } = Astro.params;
+---
+
+<PublicLayout title={t('meta.reviews')} description={t('meta.defaultDescription')}>
+  <Reviews targetId={id!} client:load />
+</PublicLayout>

@@ -1,0 +1,16 @@
+---
+import PublicLayout from '@/layouts/PublicLayout.astro';
+import Booking from '@/app/features/booking/Booking';
+import { SERVICES } from '@/app/mock/catalog';
+import { t } from '@/app/i18n';
+
+export function getStaticPaths() {
+  return SERVICES.map((service) => ({ params: { id: service.id } }));
+}
+
+const { id } = Astro.params;
+---
+
+<PublicLayout title={t('meta.booking')} description={t('meta.defaultDescription')}>
+  <Booking serviceId={id!} date="" time="" client:load />
+</PublicLayout>

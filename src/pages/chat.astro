@@ -1,0 +1,9 @@
+---
+import PublicLayout from '@/layouts/PublicLayout.astro';
+import Chat from '@/app/features/chat/Chat';
+import { t } from '@/app/i18n';
+---
+
+<PublicLayout title={t('meta.chat')} description={t('meta.defaultDescription')}>
+  <Chat client:load />
+</PublicLayout>

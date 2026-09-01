@@ -1,0 +1,17 @@
+---
+import PublicLayout from '@/layouts/PublicLayout.astro';
+import Business from '@/app/features/business/Business';
+import { BUSINESSES } from '@/app/mock/catalog';
+import { t } from '@/app/i18n';
+
+export function getStaticPaths() {
+  return BUSINESSES.map((business) => ({ params: { id: business.id } }));
+}
+
+const { id } = Astro.params;
+const business = BUSINESSES.find((item) => item.id === id);
+---
+
+<PublicLayout title={business?.name ?? t('meta.defaultTitle')} description={business?.description}>
+  <Business businessId={id!} client:load />
+</PublicLayout>

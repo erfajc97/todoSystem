@@ -1,0 +1,10 @@
+---
+import PublicLayout from '@/layouts/PublicLayout.astro';
+import Home from '@/app/features/landing/Home';
+import { t } from '@/app/i18n';
+import { HOME_FEATURED, HOME_TILES, INTEREST } from '@/app/mock/catalog';
+---
+
+<PublicLayout title={t('meta.home')} description={t('meta.defaultDescription')}>
+  <Home tiles={HOME_TILES} interest={INTEREST} featured={HOME_FEATURED} client:load />
+</PublicLayout>

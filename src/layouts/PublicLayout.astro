@@ -1,0 +1,23 @@
+---
+import BaseLayout from './BaseLayout.astro';
+import Navbar from '@/app/features/landing/components/layout/Navbar';
+import SideDrawer from '@/app/features/landing/components/layout/SideDrawer';
+
+interface Props {
+  title?: string;
+  description?: string;
+  hideNavbar?: boolean;
+}
+
+const { title, description, hideNavbar = false } = Astro.props;
+---
+
+<BaseLayout title={title} description={description}>
+  <div class="mx-auto min-h-dvh w-full max-w-[430px] bg-surface">
+    {!hideNavbar && <Navbar client:load />}
+    <main class="min-h-[calc(100dvh-56px)]">
+      <slot />
+    </main>
+    <SideDrawer client:load />
+  </div>
+</BaseLayout>

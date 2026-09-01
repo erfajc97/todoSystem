@@ -1,0 +1,9 @@
+---
+import PublicLayout from '@/layouts/PublicLayout.astro';
+import Search from '@/app/features/search/Search';
+import { t } from '@/app/i18n';
+---
+
+<PublicLayout title={t('meta.search')} description={t('meta.defaultDescription')}>
+  <Search initialQuery="" client:load />
+</PublicLayout>
