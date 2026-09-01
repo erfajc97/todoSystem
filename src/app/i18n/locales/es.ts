@@ -27,6 +27,9 @@ export const es = {
     openSearch: 'Abrir búsqueda',
     openCart: 'Abrir carrito',
   },
+  footer: {
+    rights: '© {year} TodoSystem',
+  },
   home: {
     hero: 'Todo en un solo Ecosistema',
     allCategories: 'Todas las categorías',

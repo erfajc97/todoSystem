@@ -1,5 +1,6 @@
 ---
 import BaseLayout from './BaseLayout.astro';
+import Footer from './Footer.astro';
 import Navbar from '@/app/features/landing/components/layout/Navbar';
 import SideDrawer from '@/app/features/landing/components/layout/SideDrawer';
 
@@ -13,11 +14,12 @@ const { title, description, hideNavbar = false } = Astro.props;
 ---
 
 <BaseLayout title={title} description={description}>
-  <div class="mx-auto min-h-dvh w-full max-w-[430px] bg-surface">
+  <div class="flex min-h-dvh w-full flex-col bg-surface">
     {!hideNavbar && <Navbar client:load />}
-    <main class="min-h-[calc(100dvh-56px)]">
+    <main class="mx-auto w-full max-w-7xl flex-1">
       <slot />
     </main>
+    <Footer />
     <SideDrawer client:load />
   </div>
 </BaseLayout>

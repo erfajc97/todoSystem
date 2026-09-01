@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import type { Business, HomeCategoryTile, InterestCard } from '@/app/types/catalog.types';
-import { useInterestQuery, useBusinessesQuery } from '@/app/tanstack-queries/catalogQuery';
 import { useT } from '@/app/i18n/useT';
 
 export function useHomeHook(seed: {
@@ -10,8 +9,6 @@ export function useHomeHook(seed: {
 }) {
   const t = useT();
   const [query, setQuery] = useState('');
-  const interestQuery = useInterestQuery(seed.interest);
-  const featuredQuery = useBusinessesQuery('todos', seed.featured);
 
   const submitSearch = () => {
     const q = query.trim();
@@ -34,7 +31,7 @@ export function useHomeHook(seed: {
     goCategories,
     goCategory,
     tiles: seed.tiles,
-    interest: interestQuery.data ?? seed.interest,
-    featured: (featuredQuery.data ?? seed.featured).filter((b) => b.id === 'figaro' || b.id === 'diego'),
+    interest: seed.interest,
+    featured: seed.featured,
   };
 }

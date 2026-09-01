@@ -48,9 +48,11 @@ function ServiceContent({ serviceId }: ServiceDetailProps) {
   const images = [service.image, ...(business?.images ?? [])].slice(0, 3);
 
   return (
-    <div className="pb-16">
-      <ImageCarousel images={images} alt={service.name} />
-      <div className="flex flex-col gap-5 px-4 pt-4">
+    <div className="pb-16 lg:grid lg:grid-cols-2 lg:items-start lg:gap-10 lg:px-8 lg:pt-8">
+      <div className="lg:overflow-hidden lg:rounded-2xl">
+        <ImageCarousel images={images} alt={service.name} />
+      </div>
+      <div className="flex flex-col gap-5 px-4 pt-4 lg:px-0 lg:pt-0">
         <div>
           <h1 className="font-heading text-2xl font-extrabold tracking-tight">{service.name}</h1>
           <p className="mt-1 flex items-center gap-1 text-sm">
@@ -87,7 +89,7 @@ function ServiceContent({ serviceId }: ServiceDetailProps) {
               variant="primary"
               isDisabled={isChecking}
               onPress={check}
-              className="h-12 w-full rounded-full bg-brand font-semibold text-on-brand"
+              className="h-12 w-full rounded-full bg-brand font-semibold text-on-brand lg:w-auto lg:px-8"
             >
               {isChecking ? t('common.loading') : t('service.checkAvailability')}
             </Button>

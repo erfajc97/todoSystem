@@ -52,10 +52,12 @@ function BusinessContent({ businessId }: BusinessProps) {
     : `${business.description.slice(0, 110)}${business.description.length > 110 ? '…' : ''}`;
 
   return (
-    <div className="pb-16">
-      <ImageCarousel images={business.images} alt={business.name} />
+    <div className="pb-16 lg:grid lg:grid-cols-2 lg:items-start lg:gap-10 lg:px-8 lg:pt-8">
+      <div className="lg:overflow-hidden lg:rounded-2xl">
+        <ImageCarousel images={business.images} alt={business.name} />
+      </div>
 
-      <div className="flex flex-col gap-5 px-4 pt-4">
+      <div className="flex flex-col gap-5 px-4 pt-4 lg:px-0 lg:pt-0">
         <div className="flex flex-wrap gap-2">
           {business.verified ? (
             <span className="inline-flex items-center gap-1 rounded-full bg-surface-raised px-2.5 py-1 text-xs font-semibold text-verified">

@@ -12,7 +12,7 @@ export function CategoryTileGrid({ title, tiles, t, onSelect }: CategoryTileGrid
   return (
     <section>
       <h2 className="mb-4 font-heading text-lg font-extrabold tracking-tight">{title}</h2>
-      <div className="grid grid-cols-3 gap-3">
+      <div className="grid grid-cols-3 gap-3 md:grid-cols-6 md:gap-4">
         {tiles.map((tile) => (
           <Button
             key={tile.id}

@@ -11,6 +11,17 @@ export default function Navbar() {
 }
 
 function NavbarIsland() {
-  const { t, count, openDrawer } = useNavbarHook();
-  return <NavbarBar t={t} count={count} openDrawer={openDrawer} />;
+  const { t, count, openDrawer, query, setQuery, submitSearch, goSearch, goCart } = useNavbarHook();
+  return (
+    <NavbarBar
+      t={t}
+      count={count}
+      openDrawer={openDrawer}
+      query={query}
+      onQuery={setQuery}
+      onSearch={submitSearch}
+      goSearch={goSearch}
+      goCart={goCart}
+    />
+  );
 }

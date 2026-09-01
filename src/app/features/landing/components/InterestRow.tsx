@@ -14,7 +14,7 @@ export function InterestRow({ title, subtitle, items, t }: InterestRowProps) {
       <p className="mt-1 text-sm text-text-muted">{subtitle}</p>
       <div className="mt-4 grid grid-cols-2 gap-3">
         {items.map((item) => (
-          <a key={item.id} href={item.href} className="relative block aspect-[4/5] overflow-hidden rounded-[20px]">
+          <a key={item.id} href={item.href} className="relative block aspect-[4/5] overflow-hidden rounded-[20px] lg:aspect-[5/4]">
             <img src={item.image} alt={t(item.titleKey)} className="h-full w-full object-cover" />
             <span className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-brand/70 to-transparent px-3 pb-3 pt-10 font-heading text-sm font-extrabold text-on-brand">
               {t(item.titleKey)}

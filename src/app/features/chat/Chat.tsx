@@ -17,7 +17,7 @@ function ChatContent() {
   const { t, draft, setDraft, submit, voice, messages, isSending } = useChatHook();
 
   return (
-    <div className="flex min-h-[calc(100dvh-56px)] flex-col">
+    <div className="mx-auto flex min-h-[calc(100dvh-56px)] w-full max-w-3xl flex-col">
       <div className="border-b border-border px-4 py-3">
         <h1 className="font-heading text-lg font-extrabold">{t('chat.title')}</h1>
       </div>

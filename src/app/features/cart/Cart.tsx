@@ -18,7 +18,7 @@ function CartContent() {
   const { t, items, formattedTotal, setQty, removeItem, pay, confirmPay, confirm } = useCartHook();
 
   return (
-    <div className="flex min-h-[calc(100dvh-56px)] flex-col px-4 pb-8 pt-4">
+    <div className="mx-auto flex min-h-[calc(100dvh-56px)] w-full max-w-3xl flex-col px-4 pb-8 pt-4 lg:px-8 lg:pt-8">
       <h1 className="mb-4 font-heading text-2xl font-extrabold">{t('cart.title')}</h1>
       {items.length === 0 ? (
         <div className="flex flex-1 flex-col items-center justify-center gap-4 text-center">

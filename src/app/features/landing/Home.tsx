@@ -37,9 +37,9 @@ function HomeContent({ tiles, interest, featured }: HomeProps) {
   } = useHomeHook({ tiles, interest, featured });
 
   return (
-    <div className="flex flex-col gap-10 px-5 pb-16 pt-6">
+    <div className="flex flex-col gap-10 px-5 pb-16 pt-6 lg:gap-14 lg:px-8 lg:pb-24 lg:pt-10">
       <div>
-        <h1 className="max-w-[12ch] font-heading text-[1.85rem] font-extrabold leading-[1.08] tracking-tight">
+        <h1 className="max-w-[12ch] font-heading text-[1.85rem] font-extrabold leading-[1.08] tracking-tight lg:max-w-[16ch] lg:text-5xl lg:leading-[1.05]">
           {t('home.hero')}
         </h1>
         <div className="mt-3">
@@ -65,33 +65,35 @@ function HomeContent({ tiles, interest, featured }: HomeProps) {
       <Button
         variant="ghost"
         onPress={goCategories}
-        className="h-12 w-full rounded-full border border-border-strong bg-surface text-[15px] font-semibold text-text"
+        className="h-12 w-full rounded-full border border-border-strong bg-surface text-[15px] font-semibold text-text lg:w-auto lg:self-start lg:px-8"
       >
         {t('home.exploreCategories')}
       </Button>
 
-      <section>
-        <div className="mb-3 flex items-start justify-between gap-3">
-          <div>
-            <h2 className="font-heading text-lg font-extrabold tracking-tight">{t('home.resume')}</h2>
-            <p className="mt-1 text-sm text-text-muted">{t('home.resumeHint')}</p>
+      <div className="flex flex-col gap-10 lg:grid lg:grid-cols-2 lg:items-start lg:gap-12">
+        <section>
+          <div className="mb-3 flex items-start justify-between gap-3">
+            <div>
+              <h2 className="font-heading text-lg font-extrabold tracking-tight">{t('home.resume')}</h2>
+              <p className="mt-1 text-sm text-text-muted">{t('home.resumeHint')}</p>
+            </div>
+            <a href="/chat" className="shrink-0 text-sm font-medium text-text underline">
+              {t('home.seeAll')}
+            </a>
           </div>
-          <a href="/chat" className="shrink-0 text-sm font-medium text-text underline">
-            {t('home.seeAll')}
+          <a href="/chat" className="block rounded-xl border border-border px-4 py-3">
+            <p className="text-sm font-semibold">{t('home.lastChat')}</p>
+            <p className="mt-0.5 text-sm text-text-muted">{t('home.lastChatWhen')}</p>
           </a>
-        </div>
-        <a href="/chat" className="block rounded-xl border border-border px-4 py-3">
-          <p className="text-sm font-semibold">{t('home.lastChat')}</p>
-          <p className="mt-0.5 text-sm text-text-muted">{t('home.lastChatWhen')}</p>
-        </a>
-      </section>
+        </section>
 
-      <InterestRow
-        title={t('home.forYou')}
-        subtitle={t('home.forYouHint')}
-        items={interestItems}
-        t={t}
-      />
+        <InterestRow
+          title={t('home.forYou')}
+          subtitle={t('home.forYouHint')}
+          items={interestItems}
+          t={t}
+        />
+      </div>
 
       <FeaturedGrid
         title={t('home.featured')}
@@ -100,16 +102,18 @@ function HomeContent({ tiles, interest, featured }: HomeProps) {
         openLabel={t('home.open')}
       />
 
-      <section>
-        <h2 className="mb-4 font-heading text-lg font-extrabold tracking-tight">{t('home.exploreInterest')}</h2>
-        <div className="overflow-hidden rounded-[20px]">
-          <img src={IMG.mall} alt={t('home.exploreInterest')} className="aspect-[16/9] w-full object-cover" />
+      <section className="flex flex-col gap-4 lg:grid lg:grid-cols-2 lg:items-center lg:gap-12">
+        <h2 className="font-heading text-lg font-extrabold tracking-tight lg:col-start-2">
+          {t('home.exploreInterest')}
+        </h2>
+        <div className="overflow-hidden rounded-[20px] lg:col-start-1 lg:row-span-3">
+          <img src={IMG.mall} alt={t('home.exploreInterest')} className="aspect-[16/9] w-full object-cover lg:aspect-[4/3]" />
         </div>
-        <p className="mt-3 text-sm leading-relaxed text-text">{t('home.exploreInterestCopy')}</p>
+        <p className="text-sm leading-relaxed text-text lg:col-start-2">{t('home.exploreInterestCopy')}</p>
         <Button
           variant="primary"
           onPress={goCategories}
-          className="mt-4 h-12 w-full rounded-full bg-brand text-[15px] font-semibold text-on-brand"
+          className="h-12 w-full rounded-full bg-brand text-[15px] font-semibold text-on-brand lg:col-start-2 lg:w-auto lg:px-10"
         >
           {t('home.explore')}
         </Button>

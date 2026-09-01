@@ -25,7 +25,7 @@ function BookingContent({ serviceId, date, time }: BookingProps) {
   const values = form.watch();
 
   return (
-    <div className="px-4 pb-16 pt-4">
+    <div className="mx-auto w-full max-w-xl px-4 pb-16 pt-4 lg:px-0 lg:pt-8">
       <p className="mb-1 text-xs font-medium uppercase tracking-wide text-text-muted">{t('booking.title')}</p>
       <h1 className="font-heading text-2xl font-extrabold">{service?.name ?? t('common.loading')}</h1>
       {service ? <p className="mt-1 text-sm font-semibold">{formatMoney(service.price)}</p> : null}

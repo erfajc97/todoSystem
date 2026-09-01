@@ -25,7 +25,7 @@ function ReviewsContent({ targetId }: ReviewsProps) {
   const rating = ratingQuery.data;
 
   return (
-    <div className="px-4 pb-16 pt-4">
+    <div className="mx-auto w-full max-w-3xl px-4 pb-16 pt-4 lg:px-8 lg:pt-8">
       <h1 className="mb-6 font-heading text-2xl font-extrabold">{t('reviews.title')}</h1>
       {rating ? <RatingSummary summary={rating} excellentLabel={t('reviews.excellent')} /> : null}
       <p className="mt-4 flex items-center gap-1.5 text-sm font-medium">

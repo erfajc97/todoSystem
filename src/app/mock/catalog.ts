@@ -305,7 +305,10 @@ export const INTEREST: InterestCard[] = [
   { id: 'int-fit', titleKey: 'home.fitness', image: IMG.fitness, href: '/buscar?q=Fitness' },
 ];
 
-export const HOME_FEATURED = BUSINESSES.filter((b) => b.id === 'figaro' || b.id === 'diego');
+export const HOME_FEATURED = [
+  ...BUSINESSES.filter((b) => b.id === 'figaro' || b.id === 'diego'),
+  ...BUSINESSES.filter((b) => b.id !== 'figaro' && b.id !== 'diego'),
+];
 
 export const CHAT_SEED: ChatMessage[] = [
   {

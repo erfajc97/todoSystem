@@ -22,7 +22,7 @@ function CategoriesContent({ categories }: CategoriesProps) {
   const { t, query, setQuery, goSearch, categories: items } = useCategoriesHook(categories);
 
   return (
-    <div className="flex flex-col gap-5 px-4 pb-16 pt-4">
+    <div className="flex flex-col gap-5 px-4 pb-16 pt-4 lg:px-8 lg:pt-8">
       <SearchBar
         value={query}
         onChange={setQuery}
@@ -44,7 +44,7 @@ function CategoriesContent({ categories }: CategoriesProps) {
         <span className="font-heading text-base font-bold">{t('categories.communitySoon')}</span>
       </div>
 
-      <div className="grid grid-cols-2 gap-3">
+      <div className="grid grid-cols-2 gap-3 md:grid-cols-3 lg:grid-cols-4">
         {items.map((category) => (
           <CategoryCard
             key={category.id}
