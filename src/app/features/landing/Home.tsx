@@ -38,16 +38,17 @@ function HomeContent({ tiles, interest, featured }: HomeProps) {
 
   return (
     <div className="flex flex-col gap-10 px-5 pb-16 pt-6 lg:gap-14 lg:px-8 lg:pb-24 lg:pt-10">
-      <div>
-        <h1 className="max-w-[12ch] font-heading text-[1.85rem] font-extrabold leading-[1.08] tracking-tight lg:max-w-[16ch] lg:text-5xl lg:leading-[1.05]">
+      <div className="mx-auto w-full max-w-2xl text-center lg:max-w-3xl">
+        <h1 className="mx-auto max-w-[12ch] font-heading text-[1.85rem] font-extrabold leading-[1.08] tracking-tight lg:max-w-[16ch] lg:text-5xl lg:leading-[1.05]">
           {t('home.hero')}
         </h1>
-        <div className="mt-3">
+        <div className="mt-3 flex justify-center">
           <CategoryPicker label={t('home.allCategories')} onPress={goCategories} />
         </div>
       </div>
 
-      <HeroSearch
+      <div className="mx-auto flex w-full max-w-2xl flex-col gap-10 lg:max-w-3xl">
+        <HeroSearch
         query={query}
         onQuery={setQuery}
         onSearch={submitSearch}
@@ -55,20 +56,21 @@ function HomeContent({ tiles, interest, featured }: HomeProps) {
         searchLabel={t('home.searchCta')}
       />
 
-      <CategoryTileGrid
-        title={t('home.exploreByCategories')}
-        tiles={tileItems}
-        t={t}
-        onSelect={goCategory}
-      />
+        <CategoryTileGrid
+          title={t('home.exploreByCategories')}
+          tiles={tileItems}
+          t={t}
+          onSelect={goCategory}
+        />
 
-      <Button
-        variant="ghost"
-        onPress={goCategories}
-        className="h-12 w-full rounded-full border border-border-strong bg-surface text-[15px] font-semibold text-text lg:w-auto lg:self-start lg:px-8"
-      >
-        {t('home.exploreCategories')}
-      </Button>
+        <Button
+          variant="ghost"
+          onPress={goCategories}
+          className="mx-auto h-12 w-full rounded-full border border-border-strong bg-surface text-[15px] font-semibold text-text sm:max-w-sm lg:px-8"
+        >
+          {t('home.exploreCategories')}
+        </Button>
+      </div>
 
       <div className="flex flex-col gap-10 lg:grid lg:grid-cols-2 lg:items-start lg:gap-12">
         <section>
